@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes website responsive -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>
+
+        {% block title %}
+        Library Book Arrangement Optimizer
+        {% endblock %}
+
+    </title>
+
+
+    <!-- Connect our CSS file -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for(
+            'static',
+            filename='css/style.css'
+        ) }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     WEBSITE HEADER
+     ===================================================== -->
+
+<header class="main-header">
+    
+
+
+
+    <!-- ================= LOGO ================= -->
+
+    <!--
+        This loads our logo.png file.
+
+        The image must be located at:
+
+        static/images/logo.png
+    -->
+
+    <a href="/" class="logo-link">
+
+        <img
+            src="{{ url_for(
+                'static',
+                filename='images/logo.png'
+            ) }}"
+            alt="Library Book Arrangement Optimizer Logo"
+            class="logo"
+        >
+
+    </a>
+
+
+    <!-- ================= PROJECT NAME ================= -->
+
+    <div class="brand-text">
+
+        <h1>
+            Library Book Arrangement Optimizer
+        </h1>
+
+        <p>
+            Smart Library Management System
+        </p>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<nav class="navbar">
+
+
+    <!-- Dashboard -->
+
+    <a href="/">
+        🏠 Dashboard
+    </a>
+
+
+    <!-- Books -->
+
+    <a href="/books">
+        📚 Books
+    </a>
+
+
+    <!-- Shelves -->
+
+    <a href="/shelves">
+        🗄️ Shelves
+    </a>
+
+
+    <!-- Optimization -->
+
+    <a href="/optimize">
+        🧠 Optimization
+    </a>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="main-content">
+
+
+    <!--
+        Each HTML page puts its own
+        content inside this block.
+    -->
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+
+    <h3>
+        📚 Library Book Arrangement Optimizer
+    </h3>
+
+
+    <p>
+        Smart library management using
+        Greedy Algorithm.
+    </p>
+
+
+    <p>
+        Python • Flask • SQLite • HTML • CSS • JavaScript
+    </p>
+
+
+    <p class="copyright">
+        © 2026 Library Book Arrangement Optimizer
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script
+    src="{{ url_for(
+        'static',
+        filename='js/script.js'
+    ) }}">
+</script>
+
+
+</body>
+
+</html>

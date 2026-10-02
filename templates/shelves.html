@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Shelves | Library Optimizer
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     PAGE HEADER
+     ===================================================== -->
+
+<section class="page-header">
+
+    <h2>
+        🗄️ Shelf Management
+    </h2>
+
+    <p>
+        View shelf capacity, search time and allocation.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     SHELF CARDS
+     ===================================================== -->
+
+<section class="shelf-grid">
+
+
+    {% for shelf in shelves %}
+
+
+    <!-- One card for each shelf -->
+
+    <div class="shelf-card">
+
+
+        <!-- Shelf name -->
+
+        <div class="shelf-title">
+
+            <h3>
+                🗄️ {{ shelf["name"] }}
+            </h3>
+
+        </div>
+
+
+        <!-- Capacity -->
+
+        <div class="shelf-detail">
+
+            <span>
+                📚 Capacity
+            </span>
+
+            <strong>
+                {{ shelf["capacity"] }} books
+            </strong>
+
+        </div>
+
+
+        <!-- Search time -->
+
+        <div class="shelf-detail">
+
+            <span>
+                ⏱️ Search Time
+            </span>
+
+            <strong>
+                {{ shelf["search_time"] }} min
+            </strong>
+
+        </div>
+
+
+        <!-- Number of books -->
+
+        <div class="shelf-detail">
+
+            <span>
+                📖 Allocated Books
+            </span>
+
+            <strong>
+                {{ shelf["book_count"] }}
+            </strong>
+
+        </div>
+
+
+        <!-- Shelf status -->
+
+        <div class="shelf-status">
+
+
+            {% if shelf["book_count"] >= shelf["capacity"] %}
+
+                <span class="status-full">
+                    🔴 Shelf Full
+                </span>
+
+            {% else %}
+
+                <span class="status-available">
+                    🟢 Space Available
+                </span>
+
+            {% endif %}
+
+
+        </div>
+
+
+    </div>
+
+
+    {% else %}
+
+
+    <!-- No shelves -->
+
+    <div class="empty-message">
+
+        🗄️ No shelves available.
+
+    </div>
+
+
+    {% endfor %}
+
+
+</section>
+
+
+
+<!-- =====================================================
+     INFORMATION
+     ===================================================== -->
+
+<section class="info-box">
+
+    <h3>
+        💡 How Shelf Management Works
+    </h3>
+
+    <p>
+        Each shelf has a fixed capacity and search time.
+    </p>
+
+    <p>
+        Faster shelves have lower search time.
+    </p>
+
+    <p>
+        The Greedy Algorithm assigns highly rated books
+        to faster shelves.
+    </p>
+
+    <p>
+        Shelf capacity is checked during allocation.
+    </p>
+
+</section>
+
+
+{% endblock %}

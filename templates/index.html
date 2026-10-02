@@ -1,0 +1,440 @@
+<!--
+    index.html
+    This is the Dashboard/Home page
+-->
+
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Dashboard | Library Optimizer
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO SECTION
+     ===================================================== -->
+
+<section class="hero">
+
+
+    <!-- ================= LARGE LOGO ================= -->
+
+    <!--
+        This displays the project logo
+        in the dashboard.
+    -->
+
+    <div class="hero-logo-container">
+
+        <img
+            src="{{ url_for(
+                'static',
+                filename='images/logo.png'
+            ) }}"
+            alt="Library Book Arrangement Optimizer"
+            class="hero-logo"
+        >
+
+    </div>
+
+
+    <!-- Small heading -->
+
+    <p class="subtitle">
+        SMART LIBRARY MANAGEMENT
+    </p>
+
+
+    <!-- Main heading -->
+
+    <h2>
+        Library Book Arrangement Optimizer
+    </h2>
+
+
+    <!-- Project description -->
+
+    <p>
+        A smart system that organizes library books
+        using ratings, shelf capacity and search time.
+    </p>
+
+
+    <!-- Buttons -->
+
+    <div>
+
+        <a href="/books"
+           class="btn primary">
+
+            📚 Explore Books
+
+        </a>
+
+
+        <a href="/optimize"
+           class="btn secondary">
+
+            ⚡ Optimize Shelves
+
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATISTICS
+     ===================================================== -->
+
+<section class="stats">
+
+
+    <!-- Total books -->
+
+    <div class="stat-card">
+
+        <div>📚</div>
+
+        <h3>
+            {{ total_books }}
+        </h3>
+
+        <p>
+            Total Books
+        </p>
+
+    </div>
+
+
+    <!-- Total shelves -->
+
+    <div class="stat-card">
+
+        <div>🗄️</div>
+
+        <h3>
+            {{ total_shelves }}
+        </h3>
+
+        <p>
+            Total Shelves
+        </p>
+
+    </div>
+
+
+    <!-- Average rating -->
+
+    <div class="stat-card">
+
+        <div>⭐</div>
+
+        <h3>
+            {{ average_rating }}
+        </h3>
+
+        <p>
+            Average Rating
+        </p>
+
+    </div>
+
+
+    <!-- Categories -->
+
+    <div class="stat-card">
+
+        <div>📂</div>
+
+        <h3>
+            {{ total_categories }}
+        </h3>
+
+        <p>
+            Categories
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SYSTEM MODULES
+     ===================================================== -->
+
+<h2 class="section-heading">
+    System Modules
+</h2>
+
+
+<section class="module-grid">
+
+
+    <!-- Books module -->
+
+    <div class="module-card">
+
+        <div class="icon">
+            📚
+        </div>
+
+        <h3>
+            Book Management
+        </h3>
+
+        <p>
+            Add and search library books
+            with ratings and categories.
+        </p>
+
+        <a href="/books"
+           class="btn primary">
+
+            Open Books
+
+        </a>
+
+    </div>
+
+
+    <!-- Shelves module -->
+
+    <div class="module-card">
+
+        <div class="icon">
+            🗄️
+        </div>
+
+        <h3>
+            Shelf Management
+        </h3>
+
+        <p>
+            View shelf capacity,
+            search time and availability.
+        </p>
+
+        <a href="/shelves"
+           class="btn primary">
+
+            View Shelves
+
+        </a>
+
+    </div>
+
+
+    <!-- Optimization module -->
+
+    <div class="module-card">
+
+        <div class="icon">
+            🧠
+        </div>
+
+        <h3>
+            Smart Optimization
+        </h3>
+
+        <p>
+            Use the Greedy Algorithm
+            to arrange books.
+        </p>
+
+        <a href="/optimize"
+           class="btn primary">
+
+            Optimize
+
+        </a>
+
+    </div>
+
+
+    <!-- Results module -->
+
+    <div class="module-card">
+
+        <div class="icon">
+            📊
+        </div>
+
+        <h3>
+            Results
+        </h3>
+
+        <p>
+            View shelf allocation
+            and search cost.
+        </p>
+
+        <a href="/results"
+           class="btn primary">
+
+            View Results
+
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     WORKING PROCESS
+     ===================================================== -->
+
+<h2 class="section-heading">
+    How The System Works
+</h2>
+
+
+<section class="process-grid">
+
+
+    <!-- Step 1 -->
+
+    <div class="process-card">
+
+        <div class="number">
+            1
+        </div>
+
+        <h3>
+            Collect
+        </h3>
+
+        <p>
+            Store books and shelf details
+            in SQLite.
+        </p>
+
+    </div>
+
+
+    <!-- Step 2 -->
+
+    <div class="process-card">
+
+        <div class="number">
+            2
+        </div>
+
+        <h3>
+            Sort
+        </h3>
+
+        <p>
+            Sort books by rating
+            and shelves by search time.
+        </p>
+
+    </div>
+
+
+    <!-- Step 3 -->
+
+    <div class="process-card">
+
+        <div class="number">
+            3
+        </div>
+
+        <h3>
+            Allocate
+        </h3>
+
+        <p>
+            Assign highly rated books
+            to faster shelves.
+        </p>
+
+    </div>
+
+
+    <!-- Step 4 -->
+
+    <div class="process-card">
+
+        <div class="number">
+            4
+        </div>
+
+        <h3>
+            Analyze
+        </h3>
+
+        <p>
+            Calculate search cost
+            and display results.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ALGORITHM INFORMATION
+     ===================================================== -->
+
+<section class="info-box">
+
+
+    <h3>
+        🧠 DAA Algorithm Used
+    </h3>
+
+
+    <p>
+        This project uses a Greedy Algorithm.
+    </p>
+
+
+    <p>
+        Books are sorted from highest rating
+        to lowest rating.
+    </p>
+
+
+    <p>
+        Shelves are sorted from lowest
+        search time to highest search time.
+    </p>
+
+
+    <p>
+        Highly rated books are assigned
+        to faster shelves while checking capacity.
+    </p>
+
+
+    <p>
+        <strong>
+            Search Cost = Rating × Search Time
+        </strong>
+    </p>
+
+
+</section>
+
+
+{% endblock %}

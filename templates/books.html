@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Books | Library Optimizer
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     PAGE HEADER
+     ===================================================== -->
+
+<section class="page-header">
+
+    <h2>
+        📚 Book Management
+    </h2>
+
+    <p>
+        Add, search and manage library books.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADD BOOK
+     ===================================================== -->
+
+<section class="add-book-section">
+
+
+    <div class="section-title">
+
+        <h3>
+            ➕ Add New Book
+        </h3>
+
+        <p>
+            Enter book name, category and rating.
+        </p>
+
+    </div>
+
+
+    <!--
+        This form sends data to:
+
+        /add_book
+
+        in app.py
+    -->
+
+    <form
+        action="/add_book"
+        method="POST"
+        class="book-form"
+    >
+
+
+        <!-- Book name -->
+
+        <div class="form-group">
+
+            <label>
+                📖 Book Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter book name"
+                required
+            >
+
+        </div>
+
+
+        <!-- Category -->
+
+        <div class="form-group">
+
+            <label>
+                📂 Category
+            </label>
+
+            <input
+                type="text"
+                name="category"
+                placeholder="Example: Programming"
+                required
+            >
+
+        </div>
+
+
+        <!-- Rating -->
+
+        <div class="form-group">
+
+            <label>
+                ⭐ Rating
+            </label>
+
+            <input
+                type="number"
+                name="rating"
+                placeholder="0 - 10"
+                min="0"
+                max="10"
+                step="0.1"
+                required
+            >
+
+        </div>
+
+
+        <!-- Add button -->
+
+        <button
+            type="submit"
+            class="btn primary"
+        >
+
+            ➕ Add Book
+
+        </button>
+
+
+    </form>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SEARCH
+     ===================================================== -->
+
+<section class="search-section">
+
+
+    <input
+        type="text"
+        id="bookSearch"
+        placeholder="🔍 Search book, category, rating or shelf..."
+        onkeyup="searchBooks()"
+    >
+
+
+</section>
+
+
+
+<!-- =====================================================
+     BOOK TABLE
+     ===================================================== -->
+
+<section class="table-section">
+
+
+    <div class="section-title">
+
+        <h3>
+            📚 Library Books
+        </h3>
+
+        <p>
+            All books stored in the database.
+        </p>
+
+    </div>
+
+
+
+    <table id="booksTable">
+
+
+        <!-- Table headings -->
+
+        <thead>
+
+            <tr>
+
+                <th>
+                    ID
+                </th>
+
+                <th>
+                    Book Name
+                </th>
+
+                <th>
+                    Category
+                </th>
+
+                <th>
+                    Rating
+                </th>
+
+                <th>
+                    Allocated Shelf
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <!-- Table data -->
+
+        <tbody>
+
+
+            <!--
+                Flask repeats this row
+                for every book.
+            -->
+
+            {% for book in books %}
+
+
+            <tr>
+
+
+                <!-- ID -->
+
+                <td>
+                    {{ book["id"] }}
+                </td>
+
+
+                <!-- Book name -->
+
+                <td class="book-name">
+
+                    📖 {{ book["name"] }}
+
+                </td>
+
+
+                <!-- Category -->
+
+                <td>
+                    {{ book["category"] }}
+                </td>
+
+
+                <!-- Rating -->
+
+                <td>
+
+                    <span class="rating">
+
+                        ⭐ {{ book["rating"] }}
+
+                    </span>
+
+                </td>
+
+
+                <!-- Shelf -->
+
+                <td>
+
+
+                    {% if book["current_shelf"] %}
+
+                        <span class="shelf-badge">
+
+                            🗄️
+                            {{ book["current_shelf"] }}
+
+                        </span>
+
+                    {% else %}
+
+                        <span class="not-allocated">
+
+                            Not Allocated
+
+                        </span>
+
+                    {% endif %}
+
+
+                </td>
+
+
+            </tr>
+
+
+            {% else %}
+
+
+            <!-- No books message -->
+
+            <tr>
+
+                <td colspan="5">
+
+                    📚 No books available.
+                    Add your first book above.
+
+                </td>
+
+            </tr>
+
+
+            {% endfor %}
+
+
+        </tbody>
+
+
+    </table>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     INFORMATION
+     ===================================================== -->
+
+<section class="info-box">
+
+    <h3>
+        💡 Book Management
+    </h3>
+
+    <p>
+        Add new books using the form above.
+    </p>
+
+    <p>
+        Each book has a name, category and rating.
+    </p>
+
+    <p>
+        After optimization, the allocated shelf
+        is displayed automatically.
+    </p>
+
+</section>
+
+
+{% endblock %}

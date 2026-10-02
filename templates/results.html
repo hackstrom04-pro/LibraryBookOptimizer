@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Optimization Results | Library Optimizer
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     PAGE HEADER
+     ===================================================== -->
+
+<section class="page-header">
+
+    <h2>
+        🧠 Optimization Results
+    </h2>
+
+    <p>
+        View the optimized arrangement of library books.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     OPTIMIZE BUTTON
+     ===================================================== -->
+
+<section class="optimization-action">
+
+
+    <h3>
+        ⚡ Smart Shelf Optimization
+    </h3>
+
+
+    <p>
+        The Greedy Algorithm assigns highly rated books
+        to faster shelves while checking capacity.
+    </p>
+
+
+    <a
+        href="/optimize"
+        class="btn primary"
+    >
+
+        ⚡ Run Optimization
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULTS TABLE
+     ===================================================== -->
+
+<section class="table-section">
+
+
+    <div class="section-title">
+
+        <h3>
+            📊 Optimized Book Arrangement
+        </h3>
+
+    </div>
+
+
+    <table>
+
+
+        <!-- Table heading -->
+
+        <thead>
+
+            <tr>
+
+                <th>
+                    Book
+                </th>
+
+                <th>
+                    Rating
+                </th>
+
+                <th>
+                    Allocated Shelf
+                </th>
+
+                <th>
+                    Search Time
+                </th>
+
+                <th>
+                    Search Cost
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <!-- Result data -->
+
+        <tbody>
+
+
+            {% for result in results %}
+
+
+            <tr>
+
+
+                <!-- Book -->
+
+                <td class="book-name">
+
+                    📖 {{ result["book"] }}
+
+                </td>
+
+
+                <!-- Rating -->
+
+                <td>
+
+                    <span class="rating">
+
+                        ⭐ {{ result["rating"] }}
+
+                    </span>
+
+                </td>
+
+
+                <!-- Shelf -->
+
+                <td>
+
+                    <span class="shelf-badge">
+
+                        🗄️ {{ result["shelf"] }}
+
+                    </span>
+
+                </td>
+
+
+                <!-- Search time -->
+
+                <td>
+
+                    ⏱️
+                    {{ result["search_time"] }}
+                    min
+
+                </td>
+
+
+                <!-- Search cost -->
+
+                <td>
+
+                    {{ result["search_cost"] }}
+
+                </td>
+
+
+            </tr>
+
+
+            {% else %}
+
+
+            <!-- No result -->
+
+            <tr>
+
+                <td colspan="5">
+
+                    🧠 No optimization results yet.
+                    Add books and run optimization.
+
+                </td>
+
+            </tr>
+
+
+            {% endfor %}
+
+
+        </tbody>
+
+
+    </table>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     TOTAL SEARCH COST
+     ===================================================== -->
+
+<section class="cost-card">
+
+
+    <h3>
+        📈 Total Search Cost
+    </h3>
+
+
+    <div class="cost-value">
+
+        {{ total_cost }}
+
+    </div>
+
+
+    <p>
+        Search Cost = Rating × Search Time
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ALGORITHM EXPLANATION
+     ===================================================== -->
+
+<section class="info-box">
+
+
+    <h3>
+        💡 Greedy Algorithm
+    </h3>
+
+
+    <p>
+        1. Sort books by rating from high to low.
+    </p>
+
+
+    <p>
+        2. Sort shelves by search time from low to high.
+    </p>
+
+
+    <p>
+        3. Assign books to available shelves.
+    </p>
+
+
+    <p>
+        4. Check shelf capacity.
+    </p>
+
+
+    <p>
+        5. Calculate search cost.
+    </p>
+
+
+</section>
+
+
+{% endblock %}

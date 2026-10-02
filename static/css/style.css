@@ -1,0 +1,1447 @@
+/* =========================================================
+   LIBRARY BOOK ARRANGEMENT OPTIMIZER
+   Main CSS File
+   ========================================================= */
+
+
+/* =========================================================
+   1. GENERAL PAGE STYLE
+   ========================================================= */
+
+/* Remove default browser spacing */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main body */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* Make images responsive */
+
+img {
+    max-width: 100%;
+}
+
+
+/* Remove default link underline */
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   2. HEADER
+   ========================================================= */
+
+/* Main website header */
+
+.main-header {
+    min-height: 155px;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    background: linear-gradient(
+        135deg,
+        #12385c,
+        #1d527d
+    );
+
+    color: white;
+}
+
+
+/* Logo link */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+/* Project logo */
+
+.logo {
+    width: 120px;
+    height: 120px;
+
+    object-fit: contain;
+
+    background: white;
+
+    padding: 5px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20);
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Logo hover effect */
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+
+/* Website title */
+
+.brand-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+/* Website subtitle */
+
+.brand-text p {
+    color: #dbeafe;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   3. NAVIGATION BAR
+   ========================================================= */
+
+.navbar {
+    min-height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    background: #194b70;
+
+    padding: 10px 5%;
+}
+
+
+/* Navigation links */
+
+.navbar a {
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+/* Navigation hover */
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   4. MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 35px auto;
+
+    min-height: 600px;
+}
+
+
+/* =========================================================
+   5. PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+}
+
+
+/* Page title */
+
+.page-header h2 {
+    font-size: 32px;
+
+    color: #173b5e;
+
+    margin-bottom: 8px;
+}
+
+
+/* Page description */
+
+.page-header p {
+    color: #64748b;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   6. DASHBOARD HERO
+   ========================================================= */
+
+.hero {
+    background: white;
+
+    padding: 45px 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.08);
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero logo container */
+
+.hero-logo-container {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* Large project logo */
+
+.hero-logo {
+    width: 260px;
+
+    max-width: 80%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hero logo hover */
+
+.hero-logo:hover {
+    transform: scale(1.03);
+}
+
+
+/* Hero small heading */
+
+.hero .subtitle {
+    color: #64748b;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* Hero title */
+
+.hero h2 {
+    font-size: 38px;
+
+    color: #173b5e;
+
+    margin: 10px 0;
+}
+
+
+/* Hero description */
+
+.hero p {
+    color: #607d8b;
+
+    font-size: 17px;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   7. BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+
+    border: none;
+
+    padding: 13px 24px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    margin: 8px 5px;
+}
+
+
+/* Button hover */
+
+.btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Primary button */
+
+.btn.primary {
+    background: #173b5e;
+
+    color: white;
+}
+
+
+/* Primary hover */
+
+.btn.primary:hover {
+    background: #0f2c46;
+}
+
+
+/* Secondary button */
+
+.btn.secondary {
+    background: #e7eef5;
+
+    color: #173b5e;
+}
+
+
+/* Secondary hover */
+
+.btn.secondary:hover {
+    background: #d6e2ee;
+}
+
+
+/* =========================================================
+   8. DASHBOARD STATISTICS
+   ========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Individual statistic card */
+
+.stat-card {
+    background: white;
+
+    padding: 28px 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+
+    border-top: 4px solid #173b5e;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Statistics hover */
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Statistic number */
+
+.stat-card h3 {
+    font-size: 32px;
+
+    color: #173b5e;
+
+    margin: 8px 0;
+}
+
+
+/* Statistic label */
+
+.stat-card p {
+    color: #64748b;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   9. MODULE CARDS
+   ========================================================= */
+
+.module-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Module card */
+
+.module-card {
+    background: white;
+
+    padding: 28px 22px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Module hover */
+
+.module-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Module icon */
+
+.module-card .icon {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Module heading */
+
+.module-card h3 {
+    color: #173b5e;
+
+    margin-bottom: 8px;
+}
+
+
+/* Module description */
+
+.module-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   10. PROCESS SECTION
+   ========================================================= */
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin: 25px 0 35px;
+}
+
+
+/* Process card */
+
+.process-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Process number */
+
+.process-card .number {
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #173b5e;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+/* Process title */
+
+.process-card h3 {
+    color: #173b5e;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   11. ADD BOOK SECTION
+   ========================================================= */
+
+.add-book-section {
+    background: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+}
+
+
+/* Section heading */
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+
+/* Section heading text */
+
+.section-title h3 {
+    color: #173b5e;
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+
+/* Section description */
+
+.section-title p {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   12. ADD BOOK FORM
+   ========================================================= */
+
+.book-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr auto;
+
+    gap: 15px;
+
+    align-items: end;
+
+    max-width: 100%;
+
+    background: transparent;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+/* Form group */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Form label */
+
+.form-group label {
+    color: #334155;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* Form input */
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    background: #f8fafc;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Input focus */
+
+.form-group input:focus {
+    outline: none;
+
+    border-color: #1d70a8;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(29, 112, 168, 0.12);
+}
+
+
+/* =========================================================
+   13. SEARCH SECTION
+   ========================================================= */
+
+.search-section {
+    background: white;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Search box */
+
+#bookSearch {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: #f8fafc;
+}
+
+
+/* Search box focus */
+
+#bookSearch:focus {
+    outline: none;
+
+    border-color: #1d70a8;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(29, 112, 168, 0.12);
+}
+
+
+/* =========================================================
+   14. TABLE
+   ========================================================= */
+
+.table-section {
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+
+    overflow-x: auto;
+}
+
+
+/* Table */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+
+    min-width: 700px;
+}
+
+
+/* Table header */
+
+th {
+    background: #173b5e;
+
+    color: white;
+
+    padding: 15px 12px;
+
+    text-align: center;
+
+    font-weight: 600;
+}
+
+
+/* Table data */
+
+td {
+    padding: 14px 12px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    color: #334155;
+}
+
+
+/* Alternating rows */
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+
+/* Table hover */
+
+tbody tr:hover {
+    background: #edf5fb;
+}
+
+
+/* Book name */
+
+.book-name {
+    font-weight: 600;
+
+    color: #173b5e;
+}
+
+
+/* =========================================================
+   15. RATING
+   ========================================================= */
+
+.rating {
+    display: inline-block;
+
+    background: #fff7d6;
+
+    color: #8a6200;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   16. SHELF BADGE
+   ========================================================= */
+
+.shelf-badge {
+    display: inline-block;
+
+    background: #e7f3ff;
+
+    color: #14527d;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+}
+
+
+/* Not allocated */
+
+.not-allocated {
+    display: inline-block;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   17. SHELF GRID
+   ========================================================= */
+
+.shelf-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Shelf card */
+
+.shelf-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+
+    border-left: 5px solid #173b5e;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Shelf hover */
+
+.shelf-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Shelf title */
+
+.shelf-title h3 {
+    color: #173b5e;
+
+    margin-bottom: 20px;
+}
+
+
+/* Shelf detail */
+
+.shelf-detail {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* Detail label */
+
+.shelf-detail span {
+    color: #64748b;
+}
+
+
+/* Detail value */
+
+.shelf-detail strong {
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   18. SHELF STATUS
+   ========================================================= */
+
+.shelf-status {
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+
+/* Available shelf */
+
+.status-available {
+    display: inline-block;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+}
+
+
+/* Full shelf */
+
+.status-full {
+    display: inline-block;
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   19. OPTIMIZATION SECTION
+   ========================================================= */
+
+.optimization-action {
+    background: linear-gradient(
+        135deg,
+        #173b5e,
+        #245d88
+    );
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Optimization heading */
+
+.optimization-action h3 {
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Optimization description */
+
+.optimization-action p {
+    color: #dbeafe;
+
+    margin-bottom: 15px;
+}
+
+
+/* Optimization button */
+
+.optimization-action .btn.primary {
+    background: white;
+
+    color: #173b5e;
+}
+
+
+/* =========================================================
+   20. TOTAL COST CARD
+   ========================================================= */
+
+.cost-card {
+    background: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+}
+
+
+/* Cost heading */
+
+.cost-card h3 {
+    color: #173b5e;
+
+    margin-bottom: 10px;
+}
+
+
+/* Total cost value */
+
+.cost-value {
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #173b5e;
+
+    margin: 10px 0;
+}
+
+
+/* Cost explanation */
+
+.cost-card p {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   21. INFORMATION BOX
+   ========================================================= */
+
+.info-box {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    margin-bottom: 30px;
+
+    border-left: 5px solid #dcae20;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Information heading */
+
+.info-box h3 {
+    color: #173b5e;
+
+    margin-bottom: 12px;
+}
+
+
+/* Information paragraphs */
+
+.info-box p {
+    color: #64748b;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   22. EMPTY MESSAGE
+   ========================================================= */
+
+.empty-message {
+    background: white;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    color: #64748b;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   23. FOOTER
+   ========================================================= */
+
+.footer {
+    background: #102f4b;
+
+    color: white;
+
+    margin-top: 50px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+}
+
+
+/* Footer title */
+
+.footer h3 {
+    margin-bottom: 8px;
+}
+
+
+/* Footer paragraph */
+
+.footer p {
+    color: #cbd5e1;
+
+    margin: 5px 0;
+}
+
+
+/* Copyright */
+
+.footer .copyright {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   24. RESPONSIVE DESIGN - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* Statistics */
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Modules */
+
+    .module-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Process */
+
+    .process-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Shelves */
+
+    .shelf-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Add book form */
+
+    .book-form {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   25. RESPONSIVE DESIGN - MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Header */
+
+    .main-header {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px 15px;
+
+        gap: 12px;
+    }
+
+
+    /* Logo */
+
+    .logo {
+        width: 100px;
+
+        height: 100px;
+    }
+
+
+    /* Website title */
+
+    .brand-text h1 {
+        font-size: 23px;
+    }
+
+
+    /* Website subtitle */
+
+    .brand-text p {
+        font-size: 14px;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 3px;
+
+        padding: 10px;
+    }
+
+
+    /* Navigation links */
+
+    .navbar a {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* Main content */
+
+    .main-content {
+        width: 94%;
+
+        margin-top: 20px;
+    }
+
+
+    /* Page header */
+
+    .page-header {
+        padding: 22px 15px;
+    }
+
+
+    /* Page title */
+
+    .page-header h2 {
+        font-size: 25px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 30px 18px;
+    }
+
+
+    /* Hero title */
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+
+    /* Hero logo */
+
+    .hero-logo {
+        width: 210px;
+    }
+
+
+    /* Statistics */
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Modules */
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Process */
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Shelves */
+
+    .shelf-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Add book form */
+
+    .book-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Buttons */
+
+    .btn {
+        width: 100%;
+
+        margin: 6px 0;
+    }
+
+
+    /* Cost */
+
+    .cost-value {
+        font-size: 34px;
+    }
+
+
+    /* Table */
+
+    .table-section {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   END OF CSS
+   ========================================================= */
